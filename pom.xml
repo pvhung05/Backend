@@ -104,18 +104,20 @@
 				</configuration>
 			</plugin>
 
-			<!-- Maven Resources Plugin -->
+			<!-- Maven Resources Plugin with UTF-8 Encoding -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-resources-plugin</artifactId>
 				<version>3.3.0</version>  <!-- Cập nhật hoặc xác định phiên bản chính xác -->
 				<configuration>
-					<filtering>false</filtering> <!-- Tắt filtering -->
+					<encoding>ISO-8859-1</encoding>  <!-- Đảm bảo mã hóa là UTF-8 -->
+					<filtering>false</filtering> <!-- Tắt filtering nếu không cần -->
 				</configuration>
 			</plugin>
 
 		</plugins>
 	</build>
+
 
 
 </project>
