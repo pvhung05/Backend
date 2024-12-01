@@ -30,7 +30,7 @@ public class ProductService {
             product.setName(updatedProduct.getName());
             product.setPrice(updatedProduct.getPrice());
             product.setQuantity(updatedProduct.getQuantity());
-            product.setQuantity(updatedProduct.getQuantity());
+            product.setImportDate(updatedProduct.getImportDate());
             return productRepository.save(product);
         } else {
             return null;
