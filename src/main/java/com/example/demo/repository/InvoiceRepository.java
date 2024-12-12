@@ -6,5 +6,4 @@ import java.util.*;
 public interface InvoiceRepository extends JpaRepository<Invoice, Long> {
     Optional<Invoice> findByPhone( String phone);
 
-
 }

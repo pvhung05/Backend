@@ -31,7 +31,6 @@ public class InvoiceResponse {
     public InvoiceResponse(Long id, String purchaseDate, double getTotalAmount, String employeeName) {
     }
 
-
     // Getters and Setters
     public Long getInvoiceId() {
         return invoiceId;

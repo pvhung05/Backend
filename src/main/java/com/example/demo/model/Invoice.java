@@ -15,10 +15,13 @@ public class Invoice {
     @Temporal(TemporalType.DATE)
     private Date purchaseDate;
     private String customerName;
+
     private String phone;
     private String address;
+
     @Column(name = "purchase_count", nullable = false)
-    private int purchaseCount;     @ManyToOne
+    private int purchaseCount;
+    @ManyToOne
     private Employee employee;
 
     @OneToMany(mappedBy = "invoice", cascade = CascadeType.ALL)

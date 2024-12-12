@@ -14,8 +14,6 @@ public class InvoiceController {
     @Autowired
     private InvoiceService invoiceService;
 
-
-
     // API để tạo hóa đơn mới
     @PostMapping
     public InvoiceResponse createInvoice(@RequestBody InvoiceRequest request) {
@@ -31,7 +29,5 @@ public class InvoiceController {
         List<InvoiceResponse> invoiceResponses = invoiceService.getAllInvoices();
         return ResponseEntity.ok(invoiceResponses);
     }
-
-
 
 }
