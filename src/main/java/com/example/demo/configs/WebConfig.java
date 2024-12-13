@@ -9,7 +9,7 @@ public class WebConfig implements WebMvcConfigurer {
     @Override
     public void addCorsMappings(CorsRegistry registry) {
         registry.addMapping("/**")  // Chỉ áp dụng cho các API có đường dẫn /api/
-                .allowedOrigins("https://d-bproject.vercel.app/login")  // Địa chỉ của front-end trên Vercel
+                .allowedOrigins("https://d-bproject.vercel.app")  // Địa chỉ của front-end trên Vercel
                 .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
                 .allowedHeaders("*")
                 .allowCredentials(true);  // Cho phép gửi cookie (nếu cần)
