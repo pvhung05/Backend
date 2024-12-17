@@ -14,39 +14,55 @@ import java.util.Optional;
 @RequestMapping("/api/foods")
 public class FoodController {
 
-    private final FoodService foodService;
+    private final FoodService fS;
 
     @Autowired
-    public FoodController(FoodService foodService) {
-        this.foodService = foodService;
+    public FoodController(FoodService fS) {
+        this.fS = fS;
     }
 
-    // Get all Food products
+    /**
+     * Get all Food products
+     * @return 123
+     */
     @GetMapping
     public List<Food> getAllFoods() {
-        return foodService.getAllFoods();
+        return fS.getAllFoods();
     }
 
-    // Get a Food product by ID
+    /**
+     * Get a Food product by ID
+     * @param id 123
+     * @return 123
+     */
     @GetMapping("/{id}")
     public ResponseEntity<Food> getFoodById(@PathVariable Long id) {
-        Optional<Food> food = foodService.getFoodById(id);
+        Optional<Food> food = fS.getFoodById(id);
         return food.map(ResponseEntity::ok)
                 .orElseGet(() -> ResponseEntity.status(HttpStatus.NOT_FOUND).build());
     }
 
-    // Add a new Food product
+    /**
+     * Add a new Food product
+     * @param food 123
+     * @return 123
+     */
     @PostMapping
     public ResponseEntity<Food> addFood(@RequestBody Food food) {
-        Food createdFood = foodService.addFood(food);
+        Food createdFood = fS.addFood(food);
         return ResponseEntity.status(HttpStatus.CREATED).body(createdFood);
     }
 
-    // Update an existing Food product by ID
+    /**
+     * Update an existing Food product by ID
+     * @param id 123
+     * @param foodDetails 123
+     * @return 123
+     */
     @PutMapping("/{id}")
     public ResponseEntity<Food> updateFood(@PathVariable Long id, @RequestBody Food foodDetails) {
         try {
-            Food updatedFood = foodService.updateFood(id, foodDetails);
+            Food updatedFood = fS.updateFood(id, foodDetails);
 
             return ResponseEntity.ok(updatedFood);
         } catch (RuntimeException e) {
@@ -54,10 +70,14 @@ public class FoodController {
         }
     }
 
-    // Delete a Food product by ID
+    /**
+     * Delete a Food product by ID
+     * @param id 123
+     * @return 123
+     */
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteFood(@PathVariable Long id) {
-        foodService.deleteFood(id);
+        fS.deleteFood(id);
         return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
     }
 }
