@@ -19,31 +19,50 @@ public class HouseholdController {
         this.householdService = householdService;
     }
 
-    // Lấy tất cả sản phẩm gia dụng
+    /**
+     * get all household product
+     * @return 123
+     */
     @GetMapping
     public List<Household> getAllHouseholds() {
         return householdService.getAllHouseholds();
     }
 
-    // Lấy sản phẩm gia dụng theo ID
+    /**
+     * get household product by id
+     * @param id 123
+     * @return 123
+     */
     @GetMapping("/{id}")
     public Optional<Household> getHouseholdById(@PathVariable Long id) {
         return householdService.getHouseholdById(id);
     }
 
-    // Thêm mới sản phẩm gia dụng
+    /**
+     * add new household product
+     * @param household 123
+     * @return 123
+     */
     @PostMapping
     public Household addHousehold(@RequestBody Household household) {
         return householdService.addHousehold(household);
     }
 
-    // Cập nhật sản phẩm gia dụng
+    /**
+     * update household product
+     * @param id 123
+     * @param household 123
+     * @return 123
+     */
     @PutMapping("/{id}")
     public Household updateHousehold(@PathVariable Long id, @RequestBody Household household) {
         return householdService.updateHousehold(id, household);
     }
 
-    // Xóa sản phẩm gia dụng
+    /**
+     * delete household product
+     * @param id 123
+     */
     @DeleteMapping("/{id}")
     public void deleteHousehold(@PathVariable Long id) {
         householdService.deleteHousehold(id);
