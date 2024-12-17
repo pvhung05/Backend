@@ -14,7 +14,11 @@ public class InvoiceController {
     @Autowired
     private InvoiceService invoiceService;
 
-    // API để tạo hóa đơn mới
+    /**
+     * API to create new order
+     * @param request 123
+     * @return 123
+     */
     @PostMapping
     public InvoiceResponse createInvoice(@RequestBody InvoiceRequest request) {
         return invoiceService.createInvoice(request);

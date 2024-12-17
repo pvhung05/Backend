@@ -19,14 +19,23 @@ public class ProductController {
         this.productService = productService;
     }
 
-    // Thêm mới sản phẩm
+    /**
+     * add new product
+     * @param product 123
+     * @return 123
+     */
     @PostMapping
     public ResponseEntity<Product> createProduct(@RequestBody Product product) {
         Product createdProduct = productService.createProduct(product);
         return ResponseEntity.ok(createdProduct);
     }
 
-    // Cập nhật sản phẩm
+    /**
+     * update product
+     * @param id 123
+     * @param productDetails 123
+     * @return 123
+     */
     @PutMapping("/{id}")
     public ResponseEntity<Product> updateProduct(@PathVariable("id") Long id, @RequestBody Product productDetails) {
         Product updatedProduct = productService.updateProduct(id, productDetails);
@@ -37,13 +46,20 @@ public class ProductController {
         }
     }
 
-    // Lấy tất cả sản phẩm
+    /**
+     * get all products
+     * @return 123
+     */
     @GetMapping
     public List<Product> getAllProducts() {
         return productService.getAllProducts();
     }
 
-    // Lấy sản phẩm theo id
+    /**
+     * get product by id
+     * @param id 123
+     * @return 123
+     */
     @GetMapping("/{id}")
     public ResponseEntity<Product> getProductById(@PathVariable("id") Long id) {
         try {
@@ -54,7 +70,11 @@ public class ProductController {
         }
     }
 
-    // Xóa sản phẩm
+    /**
+     * delete roduct
+     * @param id 123
+     * @return 123
+     */
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteProduct(@PathVariable("id") Long id) {
         try {

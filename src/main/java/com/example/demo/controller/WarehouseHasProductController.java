@@ -20,6 +20,8 @@ public class WarehouseHasProductController {
     @RequestMapping
     public List<WarehouseHasProduct> getAllWarehousesHasProduct() {
         //System.out.println("hoang");
+        //System.out.println("huy");
+        //System.out.println("hung");
         return warehouseHasProductService.getAllWarehouseHasProduct();
     }
 
